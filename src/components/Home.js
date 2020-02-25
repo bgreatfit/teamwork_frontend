@@ -14,7 +14,7 @@ class Home extends Component {
     componentDidMount() {
         fetch('http://192.168.99.100:9000/api/v1/auth/create-user')
           .then(response => response.json())
-          .then(data => this.setState({users: data}))
+          .then(data => console.log('data',data))
           // .then(data => {
           //     let user = data.results.map(pic=>{
           //
@@ -33,7 +33,6 @@ class Home extends Component {
                   <Comment />
                 </PostItem>
                  <Sidebar/>
-                 <PostItem/>
             </>
 
 

@@ -12,6 +12,6 @@ let CommentDetail = (props) => {
                     </div>
                 </div>
     )
-}
+};
 
 export  default CommentDetail;

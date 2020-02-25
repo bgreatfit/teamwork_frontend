@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
+import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import Home from './Home';
 import {Header} from "./layouts/Header";
 import Sidebar from "./layouts/Sidebar";
-import {HashRouter as Router, Route,Switch} from 'react-router-dom';
+import SeasonDisplayHome from "./SeasonDisplayHome"
 
 class App extends Component{
   render() {
+
       return (
           <Router>
               <>
@@ -13,10 +15,13 @@ class App extends Component{
                   <div className="container">
 
                       <div className="row">
-                          <Home/>
+
+
                           <Switch>
+
+                                <Route exact path="/" component={Home}/>
                                 <Route exact path="/login" component={Home}/>
-                                <Route exact path="/register" component={''}/>
+                                <Route exact path="/season_display" component={SeasonDisplayHome}/>
                             </Switch>
                       </div>
                   </div>
