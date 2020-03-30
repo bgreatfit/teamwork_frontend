@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import SeasonDisplay from "./SeasonDisplay"
+import Spinner from "./Spinner";
 
 export default class SeasonDisplayHome extends  Component{
     constructor(props){
@@ -8,7 +9,8 @@ export default class SeasonDisplayHome extends  Component{
     }
 
     componentDidMount() {
-        this.getLocation()
+        this.getLocation();
+
     }
 
     getLocation(){
@@ -16,19 +18,23 @@ export default class SeasonDisplayHome extends  Component{
             (position) => this.setState({lat:position.coords.latitude}),
             (err) => this.setState({errorMessage:err.message}))
     }
+    renderContent(){
+        if(this.state.errorMessage  && !this.state.lat){
+            return <h1>Error: {this.state.errorMessage}</h1>
+        }
+        if( this.state.lat){
+            return <SeasonDisplay lat={this.state.lat}/>
+        }
+        return <Spinner message="Allow app to read location"/>
+
+    }
 
     render() {
+
         return(
             <>
-                {this.state.errorMessage  && !this.state.lat &&
-                  <h1>Error: {this.state.errorMessage} </h1>
-                }
-                {this.state.lat  && this.state.lat &&
-                    <SeasonDisplay lat={this.state.lat} />
-                }
-                {!this.state.lat  && !this.state.errorMessage &&
-                  <h1>Location: Loading...</h1>
-                }
+                {this.renderContent()}
+
             </>
         )
     }
