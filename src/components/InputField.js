@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import Spinner from "./Spinner";
 
 class InputField extends Component {
     constructor(props) {
@@ -7,9 +8,8 @@ class InputField extends Component {
         this.state = {term:''}
     }
 
-    componentWillMount() {
 
-    }
+
 
     componentDidMount() {
 
@@ -35,6 +35,10 @@ class InputField extends Component {
                            value={this.state.term}
                             />
                 </form>
+
+
+
+
             </>
         );
     }

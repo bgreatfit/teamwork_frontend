@@ -1,26 +1,15 @@
-import React,{Component} from "react";
-import InputField from "./InputField"
-class ImageList extends Component{
+import React from 'react'
+import ImageCard from "./ImageCard";
 
-   onSubmit = (term)=>{
-       console.log(term);
-       const key = "XB6Vbgf28d19tx8dR4xfF28_ZTXYvY_3uUOKmlHjre4";
-        fetch('https://api.unsplash.com/search/photos?query=term', {
-            method: 'GET',
-            headers: {'Authorization': `Client-ID ${key}`},
+const ImageList = (props) => {
+    const items = props.images.map((image) =>
+        <ImageCard key={image.id} image={image} />
+    );
+    return (
+              <div className="image-list">
+                      {items}
+              </div>
+    )
+};
 
-        })
-            .then(response => response.json())
-            .then(data => console.log(data));
-   };
-
-
-    render(){
-        return(
-            <div>
-              <InputField onSubmit={this.onSubmit}/>
-            </div>
-        )
-    }
-}
 export default ImageList;

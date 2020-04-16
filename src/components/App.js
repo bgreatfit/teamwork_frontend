@@ -4,7 +4,7 @@ import Home from './Home';
 import {Header} from "./layouts/Header";
 import Sidebar from "./layouts/Sidebar";
 import SeasonDisplayHome from "./SeasonDisplayHome"
-import ImageList from "./ImageList";
+import ImageApp from "./ImageApp";
 
 class App extends Component{
   render() {
@@ -23,7 +23,7 @@ class App extends Component{
                                 <Route exact path="/" component={Home}/>
                                 <Route exact path="/login" component={Home}/>
                                 <Route exact path="/season_display" component={SeasonDisplayHome}/>
-                                <Route exact path="/imagelist" component={ImageList}/>
+                                <Route exact path="/image_app" component={ImageApp}/>
                           </Switch>
                       </div>
                   </div>
