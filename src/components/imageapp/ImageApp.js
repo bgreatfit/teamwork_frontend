@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import InputField from "./InputField"
-import unsplash_get from "../api/unsplash";
+import unsplash_get from "./api/unsplash";
 import ImageList from "./ImageList"
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 
 class ImageApp extends Component {
     constructor(props) {

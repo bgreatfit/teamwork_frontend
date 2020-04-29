@@ -21,10 +21,13 @@ export class Header extends Component {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/season_display">SeasonDisplay</Link>
+                    <Link className="nav-link" to="/season_display">Season App</Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/image_app">Images</Link>
+                    <Link className="nav-link" to="/image_app">Image App</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/video_app">Video App</Link>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" link="#">Contact</a>

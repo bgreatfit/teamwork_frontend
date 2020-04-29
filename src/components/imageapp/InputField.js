@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 
 class InputField extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class InputField extends Component {
     }
     onFormSubmit = (e)=>{
         e.preventDefault();
-        this.props.onSubmit(this.state.term);
+        this.props.handleTermSubmit(this.state.term);
         console.log(this.state.term)
     };
     onInputChange = (e)=>{

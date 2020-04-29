@@ -3,8 +3,9 @@ import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import Home from './Home';
 import {Header} from "./layouts/Header";
 import Sidebar from "./layouts/Sidebar";
-import SeasonDisplayHome from "./SeasonDisplayHome"
-import ImageApp from "./ImageApp";
+import SeasonDisplayHome from "./seasonapp/SeasonDisplayHome"
+import ImageApp from "./imageapp/ImageApp";
+import VideoApp from "./videoapp/VideoApp";
 
 class App extends Component{
   render() {
@@ -24,6 +25,7 @@ class App extends Component{
                                 <Route exact path="/login" component={Home}/>
                                 <Route exact path="/season_display" component={SeasonDisplayHome}/>
                                 <Route exact path="/image_app" component={ImageApp}/>
+                                <Route exact path="/video_app" component={VideoApp}/>
                           </Switch>
                       </div>
                   </div>

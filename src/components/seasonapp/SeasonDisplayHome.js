@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import SeasonDisplay from "./SeasonDisplay"
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 
 export default class SeasonDisplayHome extends  Component{
     constructor(props){
